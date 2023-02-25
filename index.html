@@ -3,10 +3,13 @@
         <meta charset="utf-8">
     </head>
     <script type="text/javascript">
-        
+            const sq =() => {
+                let ValorEntrada = Number(document.getElementById("pantalla").value);
+                document.getElementById("pantalla").value =ValorEntrada*ValorEntrada;
+            }
     </script>
     <body>
-        <h2 id="Titulo" class="Cabecera"> <!-- A lo mejor tengo que cambiarlo a h2 por enunciado-->
+        <h2 id="Titulo" class="Cabecera"> 
             Calculadora de CORE
         </h2> 
         <div id="BloqueInput">
