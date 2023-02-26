@@ -69,27 +69,32 @@
                 acumula(inputValue());
                 operador = "+";
                 vaciarInput();
+                rellenarInfo();
             }
             const sub = () => {
                 acumula(inputValue());
                 operador = "-";
                 vaciarInput();
+                rellenarInfo();
             }            
             const mul = () => {
                 acumula(inputValue());
                 operador = "*";
                 vaciarInput();
+                rellenarInfo();
             }
             const div = () => {
                 acumula(inputValue());
                 operador = "/";
                 vaciarInput();
+                rellenarInfo();
             }            
             const eq = () => {
                 acumula(inputValue());
                 operador = "=";
                 vaciarInput();
                 setInputValue(acumulador);
+                rellenarInfo();
             }
             const rellenarInfo = () => {
                 const resultadoInput = inputValue();
