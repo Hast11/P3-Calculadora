@@ -11,7 +11,14 @@
             }
             const vaciarInput = () =>{
                 document.getElementById("pantalla").value="";
-            }            
+            }       
+            const validNumber = () => {
+                if ( Number.isNaN(inputValue()) ) {
+                    setInputValue("Error");
+                    return false;
+                }
+                return true;
+            }                 
             const onload = () =>{
                 document.getElementById("cuadrado").addEventListener("click",sq);
                 document.getElementById("factorial").addEventListener("click",fact);
@@ -23,11 +30,13 @@
                 document.getElementById("igual").addEventListener("click",eq);
             }
             const sq =() => {
+                if(!validNumber()) return;
                 let valorEntrada = inputValue();
                 setInputValue(input*input);
                 rellenarInfo();
             }
             const fact = () => {
+                if(!validNumber()) return;
                 let valorEntrada = inputValue();
                 let resultado;
                 for(i = ValorEntrada; i > 1; i--){
@@ -37,6 +46,7 @@
                 rellenarInfo();
             }
             const sqr = () => {
+                if(!validNumber()) return;
                 let valorEntrada = inputValue();
                 setInputValue(Math.sqrt(valorEntrada));
                 rellenarInfo();
@@ -66,30 +76,35 @@
             }
 
             const add = () => {
+                if(!validNumber()) return;
                 acumula(inputValue());
                 operador = "+";
                 vaciarInput();
                 rellenarInfo();
             }
             const sub = () => {
+                if(!validNumber()) return;
                 acumula(inputValue());
                 operador = "-";
                 vaciarInput();
                 rellenarInfo();
             }            
             const mul = () => {
+                if(!validNumber()) return;
                 acumula(inputValue());
                 operador = "*";
                 vaciarInput();
                 rellenarInfo();
             }
             const div = () => {
+                if(!validNumber()) return;
                 acumula(inputValue());
                 operador = "/";
                 vaciarInput();
                 rellenarInfo();
             }            
             const eq = () => {
+                if(!validNumber()) return;
                 acumula(inputValue());
                 operador = "=";
                 vaciarInput();
