@@ -25,6 +25,7 @@
             const sq =() => {
                 let valorEntrada = inputValue();
                 setInputValue(input*input);
+                rellenarInfo();
             }
             const fact = () => {
                 let valorEntrada = inputValue();
@@ -33,10 +34,12 @@
                     resultado *=i;
                 }
                 setInputValue(resultado);
+                rellenarInfo();
             }
             const sqr = () => {
                 let valorEntrada = inputValue();
                 setInputValue(Math.sqrt(valorEntrada));
+                rellenarInfo();
             }
 
             let acumulador = 0;
