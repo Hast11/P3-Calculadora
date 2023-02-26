@@ -9,6 +9,9 @@
             const setInputValue = (resultado) => {
                 document.getElementById("pantalla").value=resultado;
             }
+            const vaciarInput = () =>{
+                document.getElementById("pantalla").value="";
+            }            
             const onload = () =>{
                 document.getElementById("cuadrado").addEventListener("click",sq);
                 document.getElementById("factorial").addEventListener("click",fact);
@@ -18,9 +21,6 @@
                 document.getElementById("multiplicacion").addEventListener("click",mul);
                 document.getElementById("division").addEventListener("click",div);
                 document.getElementById("igual").addEventListener("click",eq);
-            }
-            const vaciarInput = () =>{
-                document.getElementById("pantalla").value="";
             }
             const sq =() => {
                 let valorEntrada = inputValue();
@@ -54,10 +54,31 @@
             }
 
             const add = () => {
-                acumula(getInputValue());
+                acumula(inputValue());
                 operador = "+";
                 vaciarInput();
             }
+            const sub = () => {
+                acumula(inputValue());
+                operador = "-";
+                vaciarInput();
+            }            
+            const mul = () => {
+                acumula(inputValue());
+                operador = "*";
+                vaciarInput();
+            }
+            const div = () => {
+                acumula(inputValue());
+                operador = "/";
+                vaciarInput();
+            }            
+            const eq = () => {
+                acumula(inputValue());
+                operador = "=";
+                vaciarInput();
+                setInputValue(acumulador);
+            }    
     </script>
     <body>
         <h2 id="Titulo" class="Cabecera"> 
