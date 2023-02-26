@@ -7,6 +7,18 @@
                 let ValorEntrada = Number(document.getElementById("pantalla").value);
                 document.getElementById("pantalla").value =ValorEntrada*ValorEntrada;
             }
+            const fact = () => {
+                let ValorEntrada = Number(document.getElementById("pantalla").value);
+                let resultado;
+                for(i = ValorEntrada; i > 1; i--){
+                    resultado *=i;
+                }
+                document.getElementById("pantalla").value =resultado;
+            }
+            const sqr = () => {
+                let ValorEntrada = Number(document.getElementById("pantalla").value);
+                document.getElementById("pantalla").value =Math.sqrt(ValorEntrada);
+            }
     </script>
     <body>
         <h2 id="Titulo" class="Cabecera"> 
