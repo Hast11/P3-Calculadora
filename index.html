@@ -3,21 +3,28 @@
         <meta charset="utf-8">
     </head>
     <script type="text/javascript">
+            const inputValue = () =>{
+               return Number(document.getElementById("pantalla").value);
+            }
+            const setInputValue = (resultado) => {
+                document.getElementById("pantalla").value=resultado;
+            }
+
             const sq =() => {
-                let ValorEntrada = Number(document.getElementById("pantalla").value);
-                document.getElementById("pantalla").value =ValorEntrada*ValorEntrada;
+                let valorEntrada = inputValue();
+                setInputValue(input*input);
             }
             const fact = () => {
-                let ValorEntrada = Number(document.getElementById("pantalla").value);
+                let valorEntrada = inputValue();
                 let resultado;
                 for(i = ValorEntrada; i > 1; i--){
                     resultado *=i;
                 }
-                document.getElementById("pantalla").value =resultado;
+                setInputValue(resultado);
             }
             const sqr = () => {
-                let ValorEntrada = Number(document.getElementById("pantalla").value);
-                document.getElementById("pantalla").value =Math.sqrt(ValorEntrada);
+                let valorEntrada = inputValue();
+                setInputValue(math.sqr(valorEntrada));
             }
     </script>
     <body>
