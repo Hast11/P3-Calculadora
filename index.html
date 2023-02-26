@@ -9,7 +9,19 @@
             const setInputValue = (resultado) => {
                 document.getElementById("pantalla").value=resultado;
             }
-
+            const onload = () =>{
+                document.getElementById("cuadrado").addEventListener("click",sq);
+                document.getElementById("factorial").addEventListener("click",fact);
+                document.getElementById("raiz").addEventListener("click",sqr);
+                document.getElementById("suma").addEventListener("click",add);
+                document.getElementById("resta").addEventListener("click",sub);
+                document.getElementById("multiplicacion").addEventListener("click",mul);
+                document.getElementById("division").addEventListener("click",div);
+                document.getElementById("igual").addEventListener("click",eq);
+            }
+            const vaciarInput = () =>{
+                document.getElementById("pantalla").value="";
+            }
             const sq =() => {
                 let valorEntrada = inputValue();
                 setInputValue(input*input);
@@ -24,7 +36,27 @@
             }
             const sqr = () => {
                 let valorEntrada = inputValue();
-                setInputValue(math.sqr(valorEntrada));
+                setInputValue(Math.sqrt(valorEntrada));
+            }
+
+            let acumulador = 0;
+            let operador = "";
+
+            const acumula = n => {
+                switch (operador) {
+                    case "":
+                        acumulador = n;
+                        break;
+                    case "+":
+                        acumulador += n;
+                        break;
+                }
+            }
+
+            const add = () => {
+                acumula(getInputValue());
+                operador = "+";
+                vaciarInput();
             }
     </script>
     <body>
@@ -33,7 +65,7 @@
         </h2> 
         <div id="BloqueInput">
             <span> Numero: </span>
-            <input type="text" id="Pantalla"></input>
+            <input type="text" id="Pantalla">
         </div>
 
         <div>
